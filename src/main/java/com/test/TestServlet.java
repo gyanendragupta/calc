@@ -33,7 +33,7 @@ public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOExce
         ResultSet rs = stmt.executeQuery("select * from BulkDeals");
         while (rs.next ())
         {
-        	out.print(rs.getString("Symbol"));
+        	out.println(rs.getString("Symbol"));
         }
         rs.close();
         stmt.close();
