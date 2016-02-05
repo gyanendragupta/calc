@@ -28,6 +28,6 @@ public class JdbcRepository {
     }
     
     public List<BulkDealsBean> getBulkDeals(){
-    	return getJdbcTemplate().query("SELECT * FROM `BulkDeals`)", new BulkDealsDataMapper());
+    	return getJdbcTemplate().query("SELECT * FROM BulkDeals", new BulkDealsDataMapper());
     }
 }
