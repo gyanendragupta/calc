@@ -1,4 +1,4 @@
-package com.test;
+package com.test.bulkdeals;
 
 import java.io.IOException;
 import java.sql.Connection;
