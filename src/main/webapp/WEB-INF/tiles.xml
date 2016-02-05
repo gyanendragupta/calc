@@ -11,9 +11,7 @@
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="Footer" />
     </definition>    
-    <definition name="home" extends="base.definition">        
-        <put-attribute name="body" value="/bulkdealsview.jsp" />      
-    </definition>   
+    <definition name="home" template="/bulkdealsview.jsp"></definition>   
     
     
     
