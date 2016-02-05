@@ -111,6 +111,7 @@
 			<groupId>javax.servlet.jsp.jstl</groupId>
 			<artifactId>jstl-api</artifactId>
 			<version>1.2-rev-1</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 	<profiles>
