@@ -213,7 +213,11 @@ var days = (outdate - indate)/86400000;
 var inval = document.getElementById("inVal").value;
 var outval = document.getElementById("outVal").value;
 
+<<<<<<< HEAD
 var cagr = (Math.pow(outval/inval,366/days)-1)*100;
+=======
+var cagr = (Math.pow(outval/inval,365/days)-1)*100;
+>>>>>>> branch 'master' of ssh://56ac823c2d5271b8ba000072@test-ggupta.rhcloud.com/~/git/test.git/
 document.getElementById("cagr").value=cagr;
 }
 
@@ -224,11 +228,19 @@ function clear(obj){
 <section class='container'>
 <form name="CAGR" action="">
 In Date (ISO): <input id="inDate" type="text" value="2015-10-25"></input>
+<<<<<<< HEAD
 In Value (ISO): <input id="inVal" type="text" value=""></input>
 <BR>
 <BR>
 <BR>
 Out Date: <input id="outDate" type="text" value="2016-10-25"></input>
+=======
+In Value (ISO): <input id="inVal" type="text" value="2016-10-25"></input>
+<BR>
+<BR>
+<BR>
+Out Date: <input id="outDate" type="text"></input>
+>>>>>>> branch 'master' of ssh://56ac823c2d5271b8ba000072@test-ggupta.rhcloud.com/~/git/test.git/
 Out Value: <input id="outVal" type="text"></input>
 <BR>
 <button name="Calculate" type="button" value="Calculate" onclick="calcCAGR();">Calculate</button>
