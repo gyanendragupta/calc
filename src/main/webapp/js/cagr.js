@@ -33,7 +33,7 @@ function addRow() {
     var inValId="inVal"+rowCount;
 
     row.insertCell(0).innerHTML= '<input type="button" value = "Delete" onClick="Javacsript:deleteRow(this)">';
-    row.insertCell(1).innerHTML= '<input id='+inDateId+' type="text" value="2015-10-25">';
+    row.insertCell(1).innerHTML= '<input id='+inDateId+' type="text" value='+getDateToday()+'>';
     row.insertCell(2).innerHTML= '<input id='+inValId+' type="text" value="">';
 }
 
@@ -43,4 +43,27 @@ function deleteRow(obj) {
 	var table = document.getElementById("myTableData");
 	table.deleteRow(index);
 	
+}
+
+function getDateToday(){
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if(dd<10) {
+	    dd='0'+dd
+	} 
+
+	if(mm<10) {
+	    mm='0'+mm
+	} 
+
+	today = yyyy+'-'+mm+'-'+dd;
+	return today;	
+}
+
+function setCurrentDate(id){
+	var field = document.getElementById(id);
+	field.value = getDateToday();
 }
