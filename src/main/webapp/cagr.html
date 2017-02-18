@@ -31,18 +31,6 @@ html {
 
 </head>
 <body>
-<script type="text/javascript">
-function getDateToday_test(){
-	alert("inside get today");
-	var m = new moment();
-	alert(m);
-	m = m.format("DD/MM/YYYY");
-	var field = document.getElementById("asOnDate");
-	alert(field);
-	field.value = m;
-}
-</script>
-
 <section class='container'>
 <p>
 You can calculate value of a recurring investment by below table.... 
@@ -62,11 +50,11 @@ You can calculate value of a recurring investment by below table....
 <BR/>
 Frequency: 
 <select id="frequency">
-  <option value="1">Annual</option>
-  <option value="2">Half-Yearly</option>
-  <option value="3">Quaterly</option>
-  <option value="4">Monthly</option>
-  <option value="5" selected="selected">None</option>
+  <option value="ann">Annual</option>
+  <option value="hfy">Half-Yearly</option>
+  <option value="qtr">Quaterly</option>
+  <option value="mth">Monthly</option>
+  <option value="na" selected="selected">None</option>
 </select>
 Number of rows to Add: <input id="numOfRows" type="text" value="1" size="3" maxlength="3"></input>
 <input type="button" value="+ New" id="addNewRow" style="color:#3300FF; font-size:16px; " onclick="addRow();"/>
@@ -78,7 +66,9 @@ As on : <input id="asOnDate" type="text" value="" />
 <input type="button" value="Calculate" id="calculate" style="color:#3300FF; font-size:16px; " onclick="calcCAGR();"/>
 <BR>
 <BR/>
-Total Value : <input id="totalVal" type="text" value="" disabled></input>
+<hr>
+Total Investment : <input id="totalInv" type="text" value="" disabled></input>
+Total Value: <input id="totalVal" type="text" value="" disabled></input>
       
 </form>
 <BR>
