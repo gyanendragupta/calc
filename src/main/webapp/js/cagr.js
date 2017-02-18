@@ -20,8 +20,8 @@ function calcCAGR(){
 		//alert("investment after: "+investment);
 		//alert("i is "+i);	
 	}
-	document.getElementById("totalVal").value=Math.round(total);
-	document.getElementById("totalInv").value=investment;
+	document.getElementById("totalVal").value=(Math.round(total)).toLocaleString();
+	document.getElementById("totalInv").value=investment.toLocaleString();
 }
 
 function clear(obj){
