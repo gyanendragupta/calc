@@ -25,6 +25,10 @@ function calc(){
 			
 		corpus = (corpus - expense) + appreciation;
 		expense = expense * (1 + (inflation/100))
+		if( newAge > 199){
+			alert("Voila!! you have more than you would ever need. Cheers!!");
+			break;
+		}
 	}
 	document.getElementById("tableDataDiv").hidden.value = "false" ;
 }

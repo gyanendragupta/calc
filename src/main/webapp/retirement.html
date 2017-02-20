@@ -26,21 +26,26 @@ html {
   background: #f5c5f5;
   height: 100%;
 }
+input {
+	text-align: right;
+	text-decoration: blink;
+	text-indent: 1px;
+}
 </style>
 
 </head>
 <body>
 <section class='container'>
 <p>
-Retirement Calculator 
+<strong style="font-size: 20px; text-decoration: underline;">Retirement Calculator</strong> 
 </p>
 <form name="retirement" action="">
-Age: <input id="age" type="text" value="41" size="2" maxlength="2"></input>
+<strong>Age: <input id="age" type="text" value="41" size="2" maxlength="2"></input>
 Year: <input id="year" type="text" value="2022" size="4" maxlength="4"></input>
 Corpus: <input id="corpus" type="text" value="" size="10" maxlength="15"></input>
 Yearly Expense: <input id="expense" type="text" value="" size="10" maxlength="15"></input>
 Expected Inflation: <input id="inflation" type="text" value="8" size="2" maxlength="2"></input> %
-Expected CAGR: <input id="cagr" type="text" value="10" size="2" maxlength="2"></input> %
+Expected CAGR: <input id="cagr" type="text" value="10" size="2" maxlength="2"></input> % </strong>
 
 <input type="button" value="Calculate" id="calculate" style="color:#3300FF; font-size:16px; " onclick="calc();"/>
 
