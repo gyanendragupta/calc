@@ -1,6 +1,3 @@
-
-
-
 function rightclickdis() {
 	am = "Sorry...Right Click Is Disabled";
 	bV = parseInt(navigator.appVersion)
@@ -160,7 +157,6 @@ function showAmortization(form){
 			pow = pow * (1 + roi);
 		}
 		var emi = RoundNumber((form.loan_amount.value * pow * roi)/(pow - 1));
-		//alert(emi);
 		var table = document.getElementById("myTableData");
 		clearTable(table);
 		var outstandingAmt = form.loan_amount.value;
@@ -170,12 +166,10 @@ function showAmortization(form){
 		var roiTextBoxId;
 		var row;
 		for ( var i = 1; i <= form.loan_time.value; i++){
-			row = table.insertRow(i);
-			//alert("row added");
+			row = table.insertRow(i);			
 	    	row.insertCell(0).innerHTML= outstandingAmt;
 	    	emiTextBoxId = "emi"+i;
-	    	roiTextBoxId = "roi"+i;
-	    	//var emiORoutstdamt = emi; //((emi < outstandingAmt)? emi : outstandingAmt);
+	    	roiTextBoxId = "roi"+i;	    	
 	    	row.insertCell(1).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
 	    	row.insertCell(2).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+form.loan_rate.value+'>';	    	
 	    	intComponent = RoundNumber(outstandingAmt*roi);
@@ -188,56 +182,45 @@ function showAmortization(form){
 
 function recalculate(form){
 	var table = document.getElementById("myTableData");	
-	//clearTable(table);
 	var rowcount = table.rows.length;
 	var outstandingAmt = 1;
 	var emiTextBoxId;
 	var roiTextBoxId;
 	var roi = 0;
 	var emi = 0;
-	var row;
-	var cell;
+	var row;	
 	var i=1;
 	for(; i <= rowcount &&  0 < outstandingAmt; i++ ){
-		//alert(i);
         //alert("outstandingAmt: "+outstandingAmt);
 		if (i == rowcount){
 			break;
 		}
-		row = table.rows[i];
-		
+		row = table.rows[i];		
 		emiTextBoxId = "emi"+i;
-    	roiTextBoxId = "roi"+i;
-    	
+    	roiTextBoxId = "roi"+i;    	
     	if (i == 1){
     		outstandingAmt = parseInt(row.cells[0].innerHTML); // read first value of principal amount
     	} else{
     		row.cells[0].innerHTML = outstandingAmt;// calculated value
     	}
-		emi = document.getElementById(emiTextBoxId).value;
-    	//alert(emi);
-    	roi = document.getElementById(roiTextBoxId).value;
-    	//alert(roi);
-    	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));
-    	//var emiORoutstdamt = emi; //((emi < outstandingAmt) ? emi : outstandingAmt); //;    	
+		emi = document.getElementById(emiTextBoxId).value;    	
+    	roi = document.getElementById(roiTextBoxId).value;    	
+    	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));    	    	
     	row.cells[3].innerHTML = intComponent;
     	row.cells[4].innerHTML = (emi - intComponent);
         outstandingAmt = (outstandingAmt - (emi - intComponent));// new principle        
 	}	
 	if (i < rowcount){
-		for (;i <= rowcount; i++){
-			table.deleteRow((i-1))
+		//delete extra rows from the bottom
+		for (var j = rowcount; (j > i); j--){
+			table.deleteRow((j-1));
 		}
 	} else if (i == rowcount && outstandingAmt > 0){
 		for ( ; outstandingAmt > 0 ; i++){
-			row = table.insertRow(i);
-			//alert("row added");
-//			alert(emi);
-//			alert(outstandingAmt);
+			row = table.insertRow(i);			
 	    	row.insertCell(0).innerHTML= outstandingAmt;
 	    	emiTextBoxId = "emi"+i;
 	    	roiTextBoxId = "roi"+i;
-	    	//var emiORoutstdamt = emi; //((emi < outstandingAmt)?emi:outstandingAmt);
 	    	row.insertCell(1).innerHTML= '<input type="text" id='+emiTextBoxId+' value='+emi+'>'; 
 	    	row.insertCell(2).innerHTML= '<input type="text" id='+roiTextBoxId+' value='+roi+'>';	    	
 	    	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));
@@ -248,14 +231,9 @@ function recalculate(form){
 	}	
 }
 
-function clearTable(table){
-	//alert("inside clear table?");
+function clearTable(table){	
 	var rowcount = table.rows.length;	
-	for (var i= rowcount; i > 1; i--){
-		//alert(rowcount);
-		//alert("i: "+i);
+	for (var i= rowcount; i > 1; i--){		
 		table.deleteRow((i-1));
-	}
-	//alert("cleared?");
-	
+	}	
 }
