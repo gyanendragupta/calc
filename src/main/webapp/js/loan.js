@@ -242,7 +242,12 @@ function recalculate(form){
 	        emiTotal = emiTotal + parseInt(emi);
 		}
 	}
-	emiTotal = (emiTotal - parseInt(emi) + outstandingAmt + intComponent)
+	//alert("emiTotal: "+ emiTotal + " emi: "+ emi +" outstandingAmt " + outstandingAmt+ " intComponent " +intComponent);
+	var lastemi = (parseInt(emi) + outstandingAmt) ;
+	//alert(lastemi);
+	row.cells[1].innerHTML= '<input type="text" id='+emiTextBoxId+' value='+lastemi+'>';
+	row.cells[4].innerHTML= (lastemi - intComponent);
+	emiTotal = (emiTotal - emi + lastemi);
 	document.getElementById("emi_total").value = emiTotal;
 	document.getElementById("interest_total").value = interestTotal;
 }
