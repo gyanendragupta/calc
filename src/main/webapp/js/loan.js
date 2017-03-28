@@ -242,6 +242,7 @@ function recalculate(form){
 	        emiTotal = emiTotal + parseInt(emi);
 		}
 	}
+	emiTotal = (emiTotal - parseInt(emi) + outstandingAmt + intComponent)
 	document.getElementById("emi_total").value = emiTotal;
 	document.getElementById("interest_total").value = interestTotal;
 }
