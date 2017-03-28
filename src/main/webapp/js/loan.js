@@ -162,6 +162,8 @@ function showAmortization(form){
 		var outstandingAmt = form.loan_amount.value;
 		//alert(outstandingAmt);
 		var intComponent = 0;
+		var interestTotal = 0;
+		var emiTotal = 0;
 		var emiTextBoxId;
 		var roiTextBoxId;
 		var row;
@@ -176,7 +178,11 @@ function showAmortization(form){
 	    	row.insertCell(3).innerHTML= intComponent;
 	        row.insertCell(4).innerHTML= (emi - intComponent);
 	        outstandingAmt = (outstandingAmt - (emi - intComponent));
+	        interestTotal = interestTotal + intComponent;
+	        emiTotal = emiTotal + emi;
 		}
+		document.getElementById("emi_total").value = emiTotal;
+		document.getElementById("interest_total").value = interestTotal;
 	}
 }
 
@@ -188,6 +194,9 @@ function recalculate(form){
 	var roiTextBoxId;
 	var roi = 0;
 	var emi = 0;
+	var interestTotal = 0;
+	var intComponent = 0;
+	var emiTotal = 0;
 	var row;	
 	var i=1;
 	for(; i <= rowcount &&  0 < outstandingAmt; i++ ){
@@ -208,7 +217,9 @@ function recalculate(form){
     	intComponent = RoundNumber(outstandingAmt*((roi/100)/12));    	    	
     	row.cells[3].innerHTML = intComponent;
     	row.cells[4].innerHTML = (emi - intComponent);
-        outstandingAmt = (outstandingAmt - (emi - intComponent));// new principle        
+        outstandingAmt = (outstandingAmt - (emi - intComponent));// new principle
+        interestTotal = interestTotal + intComponent;
+        emiTotal = emiTotal + parseInt(emi);
 	}	
 	if (i < rowcount){
 		//delete extra rows from the bottom
@@ -227,8 +238,12 @@ function recalculate(form){
 	    	row.insertCell(3).innerHTML= intComponent;
 	        row.insertCell(4).innerHTML= (emi - intComponent);
 	        outstandingAmt = (outstandingAmt - (emi - intComponent));
+	        interestTotal = interestTotal + intComponent;
+	        emiTotal = emiTotal + parseInt(emi);
 		}
-	}	
+	}
+	document.getElementById("emi_total").value = emiTotal;
+	document.getElementById("interest_total").value = interestTotal;
 }
 
 function clearTable(table){	

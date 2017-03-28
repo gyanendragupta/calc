@@ -13,16 +13,18 @@
 </head>
 <body>
 <ul>
-  <li><a class="active" href="#">Home</a></li>
-  <li><a href="/cagr.html">CAGR Calculator</a></li>
+  <li><a href="#">Home</a></li>
+  <li><a href="/cagr.html">Recurring Investment CAGR</a></li>
   <li><a href="/loan.html">Loan Calculator</a></li>
-  <li><a href="/retirement.html">Retirement Calculator</a></li>
+  <li><a class="active" href="/retirement.html">Retirement Calculator</a></li>
 </ul>
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div style="margin-left:15%;padding:1px 16px;height:100%; background:#ccccdc ;border:1px solid #cccccc;">
 <p>
 <strong style="font-size: 20px; text-decoration: underline;">Retirement Calculator</strong> 
 </p>
+
 <form name="retirement" action="">
+<p style="background:orange;border:1px solid #cccccc;padding: 10px;">
 <strong>Age: <input id="age" type="text" value="41" size="2" maxlength="2"></input>
 Year: <input id="year" type="text" value="2022" size="4" maxlength="4"></input>
 Corpus: <input id="corpus" type="text" value="" size="10" maxlength="15"></input>
@@ -32,10 +34,10 @@ Expected CAGR: <input id="cagr" type="text" value="10" size="2" maxlength="2"></
 
 <input type="button" value="Calculate" id="calculate" style="color:#3300FF; font-size:16px; " onclick="calc();"/>
 
-
+</p>
 <BR>
 <BR>
-<table id="myTableData" border="1" cellpadding="1">
+<table id="myTableData" border="1" cellpadding="1" style="background:skyblue;border:1px solid #cccccc;padding: 10px;">
 	<tbody>
 		<tr>
 			<td align="center">Age</td>

@@ -11,49 +11,33 @@
 </head>
 <body>
 <ul>
-  <li><a class="active" href="#">Home</a></li>
-  <li><a href="/cagr.html">CAGR Calculator</a></li>
-  <li><a href="/loan.html">Loan Calculator</a></li>
+  <li><a href="#">Home</a></li>
+  <li><a href="/cagr.html">Recurring Investment CAGR</a></li>
+  <li><a class="active" href="/loan.html">Loan Calculator</a></li>
   <li><a href="/retirement.html">Retirement Calculator</a></li>
 </ul>
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div style="margin-left:15%;padding:1px 16px;height:100%; background:#ccccdc ;border:1px solid #cccccc;">
 		<p>
 		<hgroup>
 			<h1>Welcome to your loan calculator</h1>
 		</hgroup>
-		<form name="loanDetails" action="calculateEMI" method="get">
-			<table border="1">
+		<form name="loanDetails" action="calculateEMI" method="get" >
+			<table border="1" style="background:orange;border:1px solid #cccccc;padding: 10px;">
 				<tbody>
 					<tr>
 						<td width="100%">
-							<p>
-								<span class="">&nbsp;&nbsp;Amount :</span>&nbsp;&nbsp;<input
-									class="textbox" maxlength="12" name="loan_amount" size="8"
-									type="text" />&nbsp;<span class=""></span>
-							</p>
-							<p>
-								<span class="">&nbsp;&nbsp;Duration :</span>&nbsp;&nbsp;<input
-									class="textbox" maxlength="3" name="loan_time" size="3"
-									type="text" />&nbsp; <span class="">Months</span>
-							</p>
-							<p>
-								<span class="">&nbsp;&nbsp;Interest Rate :</span>&nbsp;&nbsp;<input
-									class="textbox" maxlength="5" name="loan_rate" size="3"
-									type="text" /> &nbsp;<span class="">%</span>
-							</p>
+							<p>							
+								<b>Amount :</b>&nbsp;&nbsp;<input class="textbox" maxlength="12" name="loan_amount" size="8" type="text" />
+					&nbsp;&nbsp;<b>Duration (Months):</b>&nbsp;&nbsp;<input class="textbox" maxlength="3" name="loan_time" size="3" type="text" />							
+					&nbsp;&nbsp;<b>Interest Rate(%):</b>&nbsp;&nbsp;<input class="textbox" maxlength="5" name="loan_rate" size="3" type="text" />
+							</p>					
 						</td>
 					</tr>
 					<tr>
 						<td width="100%" class="">
 							<p>
-								<span class="">&nbsp;&nbsp;EMI Calculated:</span>&nbsp;&nbsp;<input
-									class="textbox" name="loan_emi" size="12" type="text" disabled/>&nbsp;
-								<span class=""></span>
-							</p>
-							<p>
-								<span class="">&nbsp;&nbsp;Total Interest:</span>&nbsp;&nbsp;<input
-									class="textbox" name="total_int" size="12" type="text" disabled/>&nbsp;<span
-									class=""></span>
+								<b>EMI Calculated:</b>&nbsp;&nbsp;<input class="textbox" name="loan_emi" size="12" type="text" disabled/>
+								<b>Total Interest:</b>&nbsp;&nbsp;<input class="textbox" name="total_int" size="12" type="text" disabled/>
 							</p>
 						</td>
 					</tr>
@@ -72,10 +56,9 @@
 						</td>
 					</tr>
 				</tbody>
-			</table>
-		</form>
-		<form action="">
-		<table id="myTableData" border="1" cellpadding="1">
+			</table>		
+		<BR>		
+		<table id="myTableData" border="1" cellpadding="0" style="background:skyblue;border:1px solid #cccccc;padding: 10px;">
 			<tbody>
 				<tr>
 					<td>Outstanding Amount</td>
@@ -87,6 +70,8 @@
 			</tbody>
 		</table>
 		<input onclick="recalculate(this.form);" style="font-weight: bold; background: #ededed;" type="Button" value="Re-Calculate" />
+		<b>&nbsp;&nbsp;EMI Total:</b>&nbsp;&nbsp;<input class="textbox" id="emi_total" type="text" disabled/>
+		<b>&nbsp;&nbsp;Interest Total:</b>&nbsp;&nbsp;<input class="textbox" id="interest_total" type="text" disabled/>
 		</form>
 		<footer>
 			<div class=""></div>

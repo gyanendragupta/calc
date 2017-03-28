@@ -13,17 +13,18 @@
 </head>
 <body>
 <ul>
-  <li><a class="active" href="#">Home</a></li>
-  <li><a href="/cagr.html">CAGR Calculator</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a class="active" href="/cagr.html">Recurring Investment CAGR</a></li>
   <li><a href="/loan.html">Loan Calculator</a></li>
   <li><a href="/retirement.html">Retirement Calculator</a></li>
 </ul>
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div style="margin-left:15%;padding:1px 16px;height:100%; background:#ccccdc ;border:1px solid #cccccc;" >
 <p>
-You can calculate value of a recurring investment by below table.... 
+<h1>Recurring Investment CAGR</h1>
+<h2>You can calculate value or CAGR (Compounded Annual Growth Rate) of a recurring investment by below table (e.g. An Insurance Policy, Property etc).... </h2>
 </p>
 <form name="CAGR" action="">
-<table id="myTableData" border="1" cellpadding="1">
+<table id="myTableData" border="1" cellpadding="0" style="background:orange;border:1px solid #cccccc;padding: 10px;">
 	<tbody>
 		<tr>
 			<td>Delete</td>
@@ -48,8 +49,8 @@ Number of rows to Add: <input id="numOfRows" type="text" value="1" size="3" maxl
 
 <BR>
 <BR/>
-Expected CAGR : <input id="cagr" type="text" value=""></input>
-As on : <input id="asOnDate" type="text" value="" />
+Expected CAGR : <input id="cagr" type="text" value="9" maxlength="3"></input>
+As on : <input id="asOnDate" type="text" value="" maxlength="10"/>
 <input type="button" value="Calculate" id="calculate" style="color:#3300FF; font-size:16px; " onclick="calcCAGR();"/>
 <BR>
 <BR/>
