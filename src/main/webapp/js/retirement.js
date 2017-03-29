@@ -3,7 +3,6 @@ function calc(){
 	var year = parseInt(document.getElementById("year").value);
 	var corpus = parseInt(document.getElementById("corpus").value);	
 	var expense = parseInt(document.getElementById("expense").value);
-	alert(corpus);
 	if (isNaN(corpus) || isNaN(expense)){
 		alert("Corpus and Expense amount are required for calculation.");
 		return (false);
