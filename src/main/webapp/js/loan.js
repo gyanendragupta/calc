@@ -158,6 +158,8 @@ function showAmortization(form){
 		}
 		var emi = RoundNumber((form.loan_amount.value * pow * roi)/(pow - 1));
 		var table = document.getElementById("myTableData");
+		var div = document.getElementById("divTable");
+		div.style.visibility = 'visible';
 		clearTable(table);
 		var outstandingAmt = form.loan_amount.value;
 		//alert(outstandingAmt);

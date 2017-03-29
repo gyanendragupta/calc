@@ -1,12 +1,18 @@
-function calc(){
+function calc(){	
 	var age = parseInt(document.getElementById("age").value);
 	var year = parseInt(document.getElementById("year").value);
-	var corpus = parseInt(document.getElementById("corpus").value);
+	var corpus = parseInt(document.getElementById("corpus").value);	
 	var expense = parseInt(document.getElementById("expense").value);
+	alert(corpus);
+	if (isNaN(corpus) || isNaN(expense)){
+		alert("Corpus and Expense amount are required for calculation.");
+		return (false);
+	}
 	var inflation = parseInt(document.getElementById("inflation").value);
 	var cagr = parseInt(document.getElementById("cagr").value);
 	//alert(inflation);
 	var table = document.getElementById("myTableData");
+	table.style.visibility = 'visible';
 	clearTable(table);
 	var newAge;
 	var newYear;
